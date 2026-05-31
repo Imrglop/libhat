@@ -12,14 +12,6 @@
 
 namespace hat::process {
 
-    hat::process::module get_process_module() {
-        const auto module = get_module({});
-        if (!module) {
-            std::abort();
-        }
-        return *module;
-    }
-
     void module::for_each_segment(const std::function<bool(std::span<std::byte>, hat::protection)>& callback) const {
         auto phdrCallback = [&](const dl_phdr_info& info) {
             const auto addr = std::bit_cast<uintptr_t>(info.dlpi_addr);

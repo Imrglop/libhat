@@ -54,6 +54,7 @@ set(LIBHAT_SRC
     src/System.cpp
 
     src/os/mac/Process.cpp
+    src/os/mac/MemoryProtector.cpp
 
     src/os/linux/MemoryProtector.cpp
     src/os/linux/Process.cpp

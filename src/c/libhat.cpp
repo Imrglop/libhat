@@ -74,6 +74,8 @@ LIBHAT_API const void* libhat_find_pattern(
     switch (align) {
         case scan_alignment_x1:
             return find_pattern(hat::scan_alignment::X1);
+        case scan_alignment_x4:
+            return find_pattern(hat::scan_alignment::X4);
         case scan_alignment_x16:
             return find_pattern(hat::scan_alignment::X16);
     }
@@ -103,6 +105,8 @@ LIBHAT_API const void* libhat_find_pattern_mod(
     switch (align) {
         case scan_alignment_x1:
             return find_pattern.operator()<hat::scan_alignment::X1>();
+        case scan_alignment_x4:
+            return find_pattern.operator()<hat::scan_alignment::X4>();
         case scan_alignment_x16:
             return find_pattern.operator()<hat::scan_alignment::X16>();
     }

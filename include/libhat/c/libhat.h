@@ -40,6 +40,7 @@ typedef enum libhat_status_t {
 typedef enum scan_alignment {
     scan_alignment_x1,
     scan_alignment_x16,
+    scan_alignment_x4,
 } scan_alignment_t;
 
 typedef struct signature {

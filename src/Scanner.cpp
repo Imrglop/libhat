@@ -65,6 +65,11 @@ namespace hat::detail {
     }
 
     void scan_context::auto_resolve_scanner() {
+        // The vectorized scanners only support X1 and X16 alignment, so X4 always uses the single scanner
+        if (this->alignment == hat::scan_alignment::X4) {
+            this->scanner = resolve_scanner<scan_mode::Single>(*this);
+            return;
+        }
 #if defined(LIBHAT_X86) || defined(LIBHAT_X86_64)
         const auto& ext = get_system().extensions;
         if (ext.bmi) {
